@@ -1,0 +1,31 @@
+<mat-tab-group>
+  <mat-tab *ngFor="let year of years; let index = index" [label]="year">
+    <!-- <ul *ngFor="let x of months">
+      <mat-checkbox (change)="change($event, x, year)">
+        <li style="list-style:none;">{{x}}</li>
+      </mat-checkbox>
+    </ul> -->
+    <section class="example-section">
+      <span class="example-list-section">
+         <mat-checkbox class="example-margin"
+                      [checked]="allComplete"
+                      [indeterminate]="someComplete()"
+                      (change)="setAll($event.checked)">
+          All
+        </mat-checkbox> 
+      </span>
+      <span class="example-list-section">
+        <ul>
+          <li *ngFor="let month of months">
+            <mat-checkbox [(ngModel)]="month.ischecked"
+                          >
+              {{month.name}}
+            </mat-checkbox>
+          </li>
+        </ul>
+      </span>
+    </section>
+
+
+  </mat-tab>
+</mat-tab-group>
