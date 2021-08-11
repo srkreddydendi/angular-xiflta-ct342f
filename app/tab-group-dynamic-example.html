@@ -1,7 +1,7 @@
 <mat-tab-group>
   <mat-tab *ngFor="let year of years; let index = index" [label]="year">
     <section class="example-section">
-      <mat-checkbox [checked]="allComplete" [indeterminate]="someComplete()" (change)="setAll($event.checked)">
+      <mat-checkbox [checked]="allComplete" [indeterminate]="someComplete()" (change)="setAll($event.checked, year)">
         All
       </mat-checkbox>
       <ul class="example-list-section">

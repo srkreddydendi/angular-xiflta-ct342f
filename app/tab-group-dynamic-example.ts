@@ -23,13 +23,16 @@ export class TabGroupDynamicExample implements OnInit {
 
     debugger;
   }
-  setAll(completed: boolean) {
+  setAll(completed: boolean, year) {
     console.log(completed);
     this.allComplete = completed;
     if (this.months == null) {
       return;
     }
-    this.months.forEach(t => (t.ischecked = completed));
+    this.months.forEach(t => {
+      t.ischecked = completed;
+      this.change({ checked: completed }, t.name, year);
+    });
   }
   someComplete(): boolean {
     // if (this.task.subtasks == null) {
