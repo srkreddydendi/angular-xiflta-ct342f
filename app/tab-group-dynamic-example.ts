@@ -56,10 +56,14 @@ export class TabGroupDynamicExample implements OnInit {
 
   change(a, month, year) {
     debugger;
-    let obj = this.map.get(year);
+    if (a.checked) {
+      let obj = this.map.get(year);
 
-    obj.push(month);
-    this.map.set(year, obj);
+      obj.push(month);
+      this.map.set(year, obj);
+    } else {
+    }
+
     debugger;
     console.log(this.map);
   }
